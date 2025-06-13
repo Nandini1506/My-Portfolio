@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Mehaboob S</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #000000dd;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffffaa;
+      letter-spacing: 1.5px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .project {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 6px solid #00ffff;
+      padding: 25px;
+      margin-bottom: 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .project h2 {
+      margin-top: 0;
+      color: #00ffff;
+      font-size: 22px;
+    }
+
+    .project ul {
+      margin-top: 12px;
+      padding-left: 20px;
+    }
+
+    .project ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .project-report {
+      margin-top: 18px;
+    }
+
+    .project-report a {
+      display: inline-block;
+      margin-top: 5px;
+      background: #00ffff;
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .project-report a:hover {
+      background-color: #1abc9c;
+      transform: scale(1.05);
+    }
+
+    .project-report a i {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      .project h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>✨ My Projects ✨</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="project">
+      <h2>Data Mining Project: Image to Caption and Audio Generator</h2>
+      <ul>
+        <li>Developed a web-based AI system that generates descriptive image captions using Salesforce’s BLIP model and reads them aloud using pyttsx3 Text-to-Speech.</li>
+        <li>Used deep learning and NLP to enable multimodal interaction for enhanced accessibility.</li>
+        <li>Built using Python, Flask, PyTorch, and HuggingFace Transformers, with a responsive front end.</li>
+        <li>Processed image uploads in real-time, returning captions via API and converting them to speech.</li>
+        <li>Demonstrated practical applications in assistive tech, smart assistants, and e-learning platforms.</li>
+      </ul>
+      <div class="project-report">
+        <a href="https://drive.google.com/file/d/1ptHKMNymq7DUlxCh0T3jTa7yI5Rdt1xB/view?usp=sharing" target="_blank">
+          <i class="fas fa-file-alt"></i> View Project Report
+        </a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h2>Web Project: Jyothisanga University Website</h2>
+      <ul>
+        <li>Designed and developed a dynamic university website showcasing academic programs.</li>
+        <li>Created a user-friendly layout to ensure accessibility across devices.</li>
+        <li>Integrated student and faculty portals for streamlined access to important information.</li>
+        <li>Focused on SEO optimization and basic security for performance and reliability.</li>
+      </ul>
+      
+    </div>
+
+    <div class="project">
+      <h2>Computer Graphics Project: OpenGL Snake Game with Sound Integration</h2>
+      <ul>
+        <li>Developed a classic Snake game using PyOpenGL for 2D rendering and Pygame for sound.</li>
+        <li>Implemented real-time keyboard controls, smooth animations, and collision detection.</li>
+        <li>Integrated music and sound effects for food consumption, game over, and game events.</li>
+        <li>Used timer-based loops and GLUT functions for responsive gameplay and frame control.</li>
+        <li>Designed modular code to allow future enhancements like score tracking and power-ups.</li>
+      </ul>
+      <div class="project-report">
+        <a href="https://drive.google.com/file/d/1lheInTIiwxgsgu1bRhuwJi73jGeo7VsK/view?usp=drive_link" target="_blank">
+          <i class="fas fa-file-alt"></i> View Project Report
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

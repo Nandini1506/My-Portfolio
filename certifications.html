@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certifications | Mehaboob S</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0ecf8, #f9fcff);
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: #34495e;
+      color: #fff;
+      padding: 25px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+
+    .certification-card {
+      background-color: #ffffff;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .cert-icon {
+      font-size: 40px;
+      color: #2980b9;
+      margin-right: 20px;
+    }
+
+    .cert-info {
+      flex: 1;
+    }
+
+    .cert-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .cert-org {
+      font-size: 16px;
+      color: #555;
+      margin: 5px 0 10px 0;
+    }
+
+    .cert-link a {
+      text-decoration: none;
+      color: #27ae60;
+      font-weight: 500;
+    }
+
+    .cert-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #34495e;
+      color: white;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .certification-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cert-icon {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>D Nandini - Certifications</h1>
+  </header>
+
+  <div class="container">
+    <h2>My Certifications</h2>
+    <div id="certification-list">
+      <!-- JS will insert certifications -->
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 D Nandini. All rights reserved.
+  </footer>
+
+  <script>
+    const certifications = [
+      {
+        title: "Machine Learning Foundations",
+        organization: "Simplilearn",
+        link: "https://drive.google.com/file/d/1rShCychIVCffuaJTc-Ylgyv9GWGvaWEI/view?usp=drive_link"
+      },
+      {
+        title: "Java Programming",
+        organization: "Simplilearn",
+        link: "https://drive.google.com/file/d/1rOYy4LfR06sAAah2wVjA1w_QuaH7gjqC/view?usp=sharing"
+      },
+      {
+        title: "Data Visualization Using Python",
+        organization: "IBM Developer Skills Network",
+        link: "https://courses.cognitiveclass.ai/certificates/8b7b13e81422497b8814d83ec0f9bf6e"
+      },
+      {
+        title: "Applied Generative AI Certification",
+        organization: "Infosys Springboard",
+        link: "https://drive.google.com/file/d/1r9sKgs0ksjVhYEzbNEtXW8Xjvpk29xRT/view?usp=drive_link"
+      }
+    ];
+
+    const list = document.getElementById("certification-list");
+
+    certifications.forEach(cert => {
+      const div = document.createElement("div");
+      div.className = "certification-card";
+      div.innerHTML = `
+        <div class="cert-icon">🎓</div>
+        <div class="cert-info">
+          <div class="cert-title">${cert.title}</div>
+          <div class="cert-org">${cert.organization}</div>
+          <div class="cert-link"><a href="${cert.link}" target="_blank">View Certificate</a></div>
+        </div>
+      `;
+      list.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>

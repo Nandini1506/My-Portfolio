@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Mehaboob S</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #2980b9;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .badge {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 20px;
+      background-color: #3498db;
+      color: white;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .skill-list li {
+      margin: 8px 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+
+    .skill-list li::before {
+      content: "✔️";
+      margin-right: 10px;
+      color: #27ae60;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>D Nandini - Skills</h1>
+  </header>
+
+  <div class="container">
+    <h2>Technical & Soft Skills</h2>
+    <div class="grid" id="skills-grid">
+      <!-- Cards added by JS -->
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 D Nandini. All rights reserved.
+  </footer>
+
+  <script>
+    const skills = {
+      "🧠 Programming Languages": ["Python", "Java", "C", "SQL", "Data Structures", "HTML", "CSS", "JavaScript"],
+      "🛠️ Tools": ["VS Code", "PyCharm", "Eclipse", "Jupyter Notebook", "Git", "GitHub"],
+      "📚 Frameworks & Libraries": ["Django", "Flask (basic)", "NumPy", "Pandas", "Matplotlib", "Scikit-learn"],
+      "💾 Databases": ["MySQL", "SQLite"],
+      "🧪 Development Skills": ["Web Development (Frontend & Backend)", "REST APIs"],
+      "🧬 Domains": ["Machine Learning", "Web Development"],
+      "🖥️ Operating Systems": ["Windows", "Basic Linux"],
+      "🤝 Soft Skills": ["Problem Solving", "Adaptability", "Communication skills"]
+    };
+
+    const grid = document.getElementById("skills-grid");
+
+    for (const [category, list] of Object.entries(skills)) {
+      const card = document.createElement("div");
+      card.className = "skill-card";
+
+      const badge = document.createElement("div");
+      badge.className = "badge";
+      badge.textContent = category;
+
+      const ul = document.createElement("ul");
+      ul.className = "skill-list";
+
+      list.forEach(skill => {
+        const li = document.createElement("li");
+        li.textContent = skill;
+        ul.appendChild(li);
+      });
+
+      card.appendChild(badge);
+      card.appendChild(ul);
+      grid.appendChild(card);
+    }
+  </script>
+
+</body>
+</html>

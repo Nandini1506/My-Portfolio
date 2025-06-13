@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education | D Nandini</title>
+
+  <!-- Google Font & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f1f9ff, #dbeeff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+      padding: 35px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: #2c3e50;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: #3498db;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .education-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      border-left: 5px solid #3498db;
+    }
+
+    .education-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .edu-icon {
+      font-size: 30px;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+
+    .edu-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1e3d59;
+      margin-bottom: 10px;
+    }
+
+    .edu-institute {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .edu-duration {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+    .edu-grade {
+      font-size: 14px;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>D Nandini - Education</h1>
+  </header>
+
+  <div class="container">
+    <h2>My Educational Background</h2>
+    <div class="education-grid" id="education-list">
+      <!-- Cards will be populated by JS -->
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Mehaboob S. All rights reserved.
+  </footer>
+
+  <script>
+    const educationData = [
+      {
+        degree: "Master of Computer Applications (MCA)",
+        institute: "Kishkinda University",
+        duration: "2023 - 2025",
+        grade: "9.22 / 10 CGPA",
+        icon: "fa-solid fa-graduation-cap"
+      },
+      {
+        degree: "Bachelor of Science",
+        institute: "Kottureswara Degree College",
+        duration: "2020 - 2023",
+        grade: "7.86 / 10 CGPA",
+        icon: "fa-solid fa-university"
+      },
+      {
+        degree: "Science",
+        institute: "ALVA'S PU COLLEGE",
+        duration: "2016 - 2018",
+        grade: "6.56 / 10 CGPA",
+        icon: "fa-solid fa-microchip"
+      },
+      {
+        degree: "10th Grade (SSLC)",
+        institute: "Gurudeva Residential High School",
+        duration: "2015 - 2016",
+        grade: "8.65 / 10 CGPA",
+        icon: "fa-solid fa-school"
+      }
+    ];
+
+    const educationList = document.getElementById("education-list");
+
+    educationData.forEach((edu) => {
+      const card = document.createElement("div");
+      card.className = "education-card";
+      card.innerHTML = `
+        <div class="edu-icon"><i class="${edu.icon}"></i></div>
+        <div class="edu-title">${edu.degree}</div>
+        <div class="edu-institute">${edu.institute}</div>
+        <div class="edu-duration">${edu.duration}</div>
+        <div class="edu-grade">📊 ${edu.grade}</div>
+      `;
+      educationList.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
