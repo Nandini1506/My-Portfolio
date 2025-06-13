@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>D Nandini | Portfolio</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
     * {
@@ -24,50 +25,77 @@
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px 0;
+      background: #2c3e50;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      color: white;
     }
 
     header h1 {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 24px;
+      margin: 0;
     }
 
-    nav ul {
+    nav {
+      position: relative;
+    }
+
+    .nav-links {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
     }
 
-    nav ul li a {
-      color: #fff;
+    .nav-links li a {
+      color: white;
       text-decoration: none;
       font-weight: 500;
       padding: 8px 14px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+      border-radius: 6px;
     }
 
-    nav ul li a:hover {
+    .nav-links li a:hover {
+      background-color: #1abc9c;
+      color: black;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 5px 10px;
       background: #1abc9c;
-      color: #000;
+      border-radius: 5px;
     }
 
-    /* Hero Section */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #2c3e50;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 100%;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     #home {
       display: flex;
       justify-content: center;
@@ -123,17 +151,53 @@
 
     .personal-details p {
       font-size: 17px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #f0f0f0;
     }
 
+    .intro-text {
+      text-align: center;
+      margin: 40px auto 20px;
+      max-width: 800px;
+    }
+
+    .intro-text h2 {
+      font-size: 32px;
+      color: #00ffff;
+      margin-bottom: 15px;
+    }
+
+    .intro-text p {
+      font-size: 18px;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      background: #1abc9c;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #16a085;
+      color: #fff;
+    }
+
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
       .hero-content {
         flex-direction: column;
         text-align: center;
+      }
+
+      .personal-details h2 {
+        font-size: 24px;
       }
     }
   </style>
@@ -141,21 +205,28 @@
 <body>
 
   <header>
-    <div class="container">
-      <h1>D Nandini</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="projects.html">Projects</a></li> <!-- Added Projects here -->
-          <li><a href="skills.html">Skills</a></li>
-          <li><a href="certifications.html">Certifications</a></li>
-          <li><a href="education.html">Education</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>D Nandini</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="certifications.html">Certifications</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        ☰
+      </div>
+    </nav>
   </header>
+
+  <section class="intro-text">
+    <h2>Welcome to My Portfolio</h2>
+    <p>I’m <strong>D Nandini</strong>, a passionate technology enthusiast pursuing MCA with strong skills in web development, Python, and machine learning. Explore my journey, projects, and certifications that showcase my dedication to learning and growth.</p>
+    <a href="projects.html" class="cta-button">Explore My Projects</a>
+  </section>
 
   <section id="home">
     <div class="hero-content">
@@ -163,8 +234,8 @@
       <div class="personal-details">
         <h2>About Me</h2>
         <p><strong>Name:</strong> D Nandini</p>
-        <p><strong>Father's Name:</strong>  C DEVARAJA</p>
-        <p><strong>Mother's Name:</strong>  H M KAVITHA</p>
+        <p><strong>Father's Name:</strong> C DEVARAJA</p>
+        <p><strong>Mother's Name:</strong> H M KAVITHA</p>
         <p><strong>Date of Birth:</strong> 15/06/2000</p>
         <p><strong>Country:</strong> India</p>
         <p><strong>State:</strong> Karnataka</p>
